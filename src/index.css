@@ -2,95 +2,114 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap');
+
+/* VayuWatch Design System - India Pollution Monitoring Dashboard */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-
-    --radius: 0.5rem;
-
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-
-  .dark {
-    --background: 222.2 84% 4.9%;
+    /* Core backgrounds - Dark theme for data dashboard */
+    --background: 222 47% 6%;
     --foreground: 210 40% 98%;
 
-    --card: 222.2 84% 4.9%;
+    --card: 222 47% 8%;
     --card-foreground: 210 40% 98%;
 
-    --popover: 222.2 84% 4.9%;
+    --popover: 222 47% 10%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    /* Primary - Deep teal/cyan for tech feel */
+    --primary: 187 72% 45%;
+    --primary-foreground: 222 47% 6%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    /* Secondary - Muted slate */
+    --secondary: 217 19% 18%;
+    --secondary-foreground: 210 40% 90%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 217 19% 14%;
+    --muted-foreground: 215 20% 55%;
 
-    --accent: 217.2 32.6% 17.5%;
+    --accent: 187 72% 35%;
     --accent-foreground: 210 40% 98%;
 
-    --destructive: 0 62.8% 30.6%;
+    --destructive: 0 84% 60%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --border: 217 19% 20%;
+    --input: 217 19% 20%;
+    --ring: 187 72% 45%;
+
+    --radius: 0.75rem;
+
+    /* AQI Colors - Indian CPCB Standards */
+    --aqi-good: 142 76% 36%;
+    --aqi-satisfactory: 84 60% 50%;
+    --aqi-moderate: 45 93% 47%;
+    --aqi-poor: 28 87% 55%;
+    --aqi-very-poor: 0 84% 50%;
+    --aqi-severe: 0 84% 28%;
+
+    /* Semantic colors */
+    --success: 142 76% 36%;
+    --warning: 45 93% 47%;
+    --danger: 0 84% 50%;
+    --info: 199 89% 48%;
+
+    /* Gradients */
+    --gradient-dark: linear-gradient(180deg, hsl(222, 47%, 8%) 0%, hsl(222, 47%, 4%) 100%);
+    --gradient-card: linear-gradient(135deg, hsl(222, 47%, 10%) 0%, hsl(222, 47%, 7%) 100%);
+    --gradient-aqi: linear-gradient(90deg, 
+      hsl(var(--aqi-good)) 0%, 
+      hsl(var(--aqi-satisfactory)) 20%, 
+      hsl(var(--aqi-moderate)) 40%, 
+      hsl(var(--aqi-poor)) 60%, 
+      hsl(var(--aqi-very-poor)) 80%, 
+      hsl(var(--aqi-severe)) 100%
+    );
+    --gradient-primary: linear-gradient(135deg, hsl(187, 72%, 50%) 0%, hsl(187, 72%, 35%) 100%);
+
+    /* Shadows */
+    --shadow-sm: 0 2px 8px hsl(222, 47%, 3% / 0.4);
+    --shadow-md: 0 4px 16px hsl(222, 47%, 3% / 0.5);
+    --shadow-lg: 0 8px 32px hsl(222, 47%, 3% / 0.6);
+    --shadow-glow: 0 0 20px hsl(187, 72%, 45% / 0.3);
+    --shadow-aqi-good: 0 0 20px hsl(var(--aqi-good) / 0.4);
+    --shadow-aqi-poor: 0 0 20px hsl(var(--aqi-poor) / 0.4);
+    --shadow-aqi-severe: 0 0 20px hsl(var(--aqi-severe) / 0.5);
+
+    /* Typography */
+    --font-display: 'Poppins', sans-serif;
+    --font-body: 'Inter', sans-serif;
+
+    /* Sidebar */
+    --sidebar-background: 222 47% 7%;
+    --sidebar-foreground: 210 40% 90%;
+    --sidebar-primary: 187 72% 45%;
+    --sidebar-primary-foreground: 222 47% 6%;
+    --sidebar-accent: 217 19% 15%;
+    --sidebar-accent-foreground: 210 40% 90%;
+    --sidebar-border: 217 19% 18%;
+    --sidebar-ring: 187 72% 45%;
+  }
+
+  .light {
+    --background: 0 0% 98%;
+    --foreground: 222 47% 11%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+    --primary: 187 72% 40%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222 47% 11%;
+    --muted: 210 40% 94%;
+    --muted-foreground: 215 16% 47%;
+    --accent: 187 72% 95%;
+    --accent-foreground: 187 72% 30%;
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 187 72% 40%;
   }
 }
 
@@ -99,7 +118,162 @@ All colors MUST be HSL.
     @apply border-border;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground antialiased;
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    @apply font-semibold tracking-tight;
+  }
+}
+
+@layer components {
+  /* AQI Badge variants */
+  .aqi-badge-good {
+    @apply bg-aqi-good/20 text-aqi-good border border-aqi-good/30;
+  }
+  
+  .aqi-badge-satisfactory {
+    @apply bg-aqi-satisfactory/20 text-aqi-satisfactory border border-aqi-satisfactory/30;
+  }
+  
+  .aqi-badge-moderate {
+    @apply bg-aqi-moderate/20 text-aqi-moderate border border-aqi-moderate/30;
+  }
+  
+  .aqi-badge-poor {
+    @apply bg-aqi-poor/20 text-aqi-poor border border-aqi-poor/30;
+  }
+  
+  .aqi-badge-very-poor {
+    @apply bg-aqi-very-poor/20 text-aqi-very-poor border border-aqi-very-poor/30;
+  }
+  
+  .aqi-badge-severe {
+    @apply bg-aqi-severe/20 text-aqi-severe border border-aqi-severe/30;
+  }
+
+  /* Glass effect cards */
+  .glass-card {
+    @apply bg-card/60 backdrop-blur-xl border border-border/50;
+    box-shadow: var(--shadow-md);
+  }
+
+  /* Gradient text */
+  .gradient-text {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-primary);
+  }
+
+  /* Pulse animation for live data */
+  .pulse-live {
+    @apply relative;
+  }
+  
+  .pulse-live::before {
+    content: '';
+    @apply absolute w-2 h-2 bg-success rounded-full;
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  /* Map container */
+  .map-container {
+    @apply w-full h-full rounded-lg overflow-hidden;
+  }
+
+  .map-container .mapboxgl-ctrl-logo,
+  .map-container .mapboxgl-ctrl-attrib {
+    @apply opacity-50;
+  }
+}
+
+@layer utilities {
+  /* Custom scrollbar */
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: hsl(var(--muted)) transparent;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background: hsl(var(--muted));
+    border-radius: 3px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--muted-foreground));
+  }
+}
+
+/* Keyframe animations */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 5px hsl(var(--primary) / 0.5);
+  }
+  50% {
+    box-shadow: 0 0 20px hsl(var(--primary) / 0.8);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
   }
 }
