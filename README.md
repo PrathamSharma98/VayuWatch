@@ -1,73 +1,100 @@
-# Welcome to your Lovable project
+# 🌬️ VayuWatch
 
-## Project info
+**VayuWatch** is an India-focused, ward-wise air quality monitoring and pollution action dashboard designed to support citizens and government authorities with localized, data-driven insights.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+---
 
-## How can I edit this code?
+## 🚀 Project Overview
 
-There are several ways of editing your application.
+Air pollution in Indian cities varies significantly at the **ward level**, but actionable, localized insights are often missing.  
+VayuWatch bridges this gap by providing:
 
-**Use Lovable**
+- Ward-wise pollution visibility
+- City and state-level comparisons
+- Actionable mitigation recommendations
+- Citizen-friendly health advisories
+- Government-ready decision support
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+---
 
-Changes made via Lovable will be committed automatically to this repo.
+## 🗺️ Scope & Coverage
 
-**Use your preferred IDE**
+- **Country:** India  
+- **Administrative hierarchy:**  
+  India → State / UT → City → Municipal Corporation → Ward
+- Designed for Indian urban density and governance models
+- Sample focus cities:
+  - Delhi
+  - Mumbai
+  - Bengaluru
+  - Chennai
+  - Kolkata
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+---
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+## 📊 Key Features
 
-Follow these steps:
+- Interactive India map with drill-down (State → City → Ward)
+- Indian AQI standards (CPCB-compliant)
+- Ward-wise pollution visualization
+- City detail pages with trends and hotspots
+- Actionable recommendations for:
+  - Citizens
+  - Municipal Corporations
+  - Pollution Control Boards
+- Alerts and downloadable reports (ward, city, state)
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+---
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+## 🏭 Pollution Metrics (Indian Standards)
 
-# Step 3: Install the necessary dependencies.
-npm i
+- PM2.5
+- PM10
+- NO₂
+- SO₂
+- CO
+- O₃
+- NH₃
+- Pb
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+**Indian AQI Categories (CPCB):**
+- Good (0–50)
+- Satisfactory (51–100)
+- Moderate (101–200)
+- Poor (201–300)
+- Very Poor (301–400)
+- Severe (401–500)
+
+---
+
+## 🛠️ Tech Stack
+
+- **Frontend:** React + TypeScript
+- **Build Tool:** Vite
+- **UI:** Tailwind CSS, shadcn/ui
+- **Data Handling:** React Query
+- **Maps:** Open-source mapping (no paid API keys)
+- **Deployment:** GitHub Pages
+
+---
+
+## 💻 Local Development
+
+### Prerequisites
+- Node.js (v18+ recommended)
+- npm
+
+### Setup
+
+```bash
+# Clone the repository
+git clone https://github.com/PrathamSharma98/vayuwatch.git
+
+# Navigate to project directory
+cd vayuwatch
+
+# Install dependencies
+npm install
+
+# Start development server
 npm run dev
-```
-
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
