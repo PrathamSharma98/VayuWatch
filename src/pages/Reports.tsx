@@ -140,7 +140,7 @@ const Reports = () => {
             <div className="flex gap-2">
               <Button 
                 size="sm" 
-                onClick={() => handleDownload('PDF', 'Monthly')}
+                onClick={() => handleDownload('pdf', 'national')}
                 className="flex items-center gap-1"
               >
                 <Download className="w-4 h-4" />
@@ -149,7 +149,7 @@ const Reports = () => {
               <Button 
                 size="sm" 
                 variant="secondary"
-                onClick={() => handleDownload('CSV', 'Monthly')}
+                onClick={() => handleDownload('csv', 'national')}
                 className="flex items-center gap-1"
               >
                 <Download className="w-4 h-4" />
@@ -179,7 +179,7 @@ const Reports = () => {
             <div className="flex gap-2">
               <Button 
                 size="sm" 
-                onClick={() => handleDownload('PDF', 'NCAP')}
+                onClick={() => handleDownload('pdf', 'national')}
                 className="flex items-center gap-1"
               >
                 <Download className="w-4 h-4" />
@@ -188,7 +188,7 @@ const Reports = () => {
               <Button 
                 size="sm" 
                 variant="secondary"
-                onClick={() => handleDownload('CSV', 'NCAP')}
+                onClick={() => handleDownload('csv', 'national')}
                 className="flex items-center gap-1"
               >
                 <Download className="w-4 h-4" />
@@ -228,7 +228,7 @@ const Reports = () => {
                   <Button 
                     size="sm" 
                     variant="ghost"
-                    onClick={() => handleDownload('PDF', state.name)}
+                    onClick={() => handleDownload('pdf', 'state', state.id)}
                   >
                     <Download className="w-4 h-4" />
                   </Button>
@@ -268,7 +268,7 @@ const Reports = () => {
                   <Button 
                     size="sm" 
                     variant="ghost"
-                    onClick={() => handleDownload('PDF', city.name)}
+                    onClick={() => handleDownload('pdf', 'city', city.id)}
                   >
                     <Download className="w-4 h-4" />
                   </Button>
