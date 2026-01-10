@@ -57,9 +57,9 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   }, []);
 
   // Generate mock OTP (visible in UI for demo)
-  // HACKATHON MODE: Always generates 123456 as demo OTP
+  // DEMO MODE: Always generates 123456 as demo OTP
   const sendOtp = useCallback((phone: string) => {
-    const otp = '123456'; // Fixed OTP for hackathon demo - always accept this
+    const otp = '123456'; // Fixed OTP for demo - always accept this
     const expiresAt = Date.now() + 60000; // 60 seconds
     setCurrentOtp({ otp, phone, expiresAt });
     return { otp, expiresAt };

@@ -55,7 +55,7 @@ const Index = () => {
         >
           <div className="flex items-center gap-2">
             <Badge className="bg-warning text-warning-foreground">DEMO MODE</Badge>
-            <span className="text-sm text-warning">Hackathon Edition - Data is simulated for demonstration</span>
+            <span className="text-sm text-warning">Beta Version 1.0 – Data is simulated for demonstration</span>
           </div>
           <LiveSimulatedBadge lastUpdated={lastUpdated} />
         </motion.div>

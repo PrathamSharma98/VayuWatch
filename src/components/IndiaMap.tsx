@@ -1,7 +1,8 @@
 import { useEffect, useMemo } from 'react';
 import { MapContainer, TileLayer, CircleMarker, Tooltip, useMap } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
-import { statesData, getAQIColor, State, City } from '@/data/pollutionData';
+import { getAQIColor, State, City } from '@/data/pollutionData';
+import { allIndiaStates } from '@/data/indiaStatesData';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 
@@ -18,7 +19,7 @@ function MapController({ selectedStateId }: { selectedStateId?: string }) {
   
   useEffect(() => {
     if (selectedStateId) {
-      const state = statesData.find(s => s.id === selectedStateId);
+      const state = allIndiaStates.find(s => s.id === selectedStateId);
       if (state) {
         map.flyTo([state.coordinates[1], state.coordinates[0]], 7, { duration: 1.5 });
       }
@@ -33,7 +34,7 @@ function MapController({ selectedStateId }: { selectedStateId?: string }) {
 export function IndiaMap({ onStateClick, onCityClick, selectedStateId, className }: IndiaMapProps) {
   const markers = useMemo(() => {
     if (selectedStateId) {
-      const state = statesData.find(s => s.id === selectedStateId);
+      const state = allIndiaStates.find(s => s.id === selectedStateId);
       if (!state) return [];
       
       return state.cities.map(city => ({
@@ -48,7 +49,7 @@ export function IndiaMap({ onStateClick, onCityClick, selectedStateId, className
       }));
     }
     
-    return statesData.map(state => ({
+    return allIndiaStates.map(state => ({
       id: state.id,
       name: state.name,
       position: [state.coordinates[1], state.coordinates[0]] as [number, number],

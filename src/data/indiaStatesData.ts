@@ -1,5 +1,5 @@
 // Complete India States and UTs Data with 100+ Cities
-// This is an expanded mock dataset for hackathon demo purposes
+// Expanded mock dataset for VayuWatch Beta Version 1.0
 
 import { State, City, Ward, AQICategory, getAQICategory, PollutantData } from './pollutionData';
 
