@@ -47,7 +47,7 @@ export function Header() {
 
           {/* Demo Badge */}
           <Badge variant="outline" className="hidden sm:flex bg-warning/10 text-warning border-warning/30 text-xs">
-            🎯 Hackathon Demo
+            🚀 Beta v1.0
           </Badge>
 
           {/* Global Search */}

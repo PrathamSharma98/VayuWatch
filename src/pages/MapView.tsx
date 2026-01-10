@@ -4,7 +4,8 @@ import { MapPin } from 'lucide-react';
 import { Header } from '@/components/Header';
 import { IndiaMap } from '@/components/IndiaMap';
 import { AQIBadge } from '@/components/AQIBadge';
-import { statesData, State, City } from '@/data/pollutionData';
+import { allIndiaStates } from '@/data/indiaStatesData';
+import { State, City } from '@/data/pollutionData';
 import { useNavigate } from 'react-router-dom';
 
 const MapView = () => {
@@ -36,7 +37,7 @@ const MapView = () => {
             </h1>
           </div>
           <p className="text-muted-foreground">
-            Interactive map showing real-time air quality across India. Click on states to drill down to cities.
+            Interactive map showing real-time air quality across India. Click on states to drill down to cities. Covers all 28 States and 8 Union Territories.
           </p>
         </motion.div>
 
@@ -80,7 +81,7 @@ const MapView = () => {
                 ))
               ) : (
                 // Show states
-                statesData.map((state) => (
+                allIndiaStates.map((state) => (
                   <button
                     key={state.id}
                     onClick={() => handleStateClick(state)}

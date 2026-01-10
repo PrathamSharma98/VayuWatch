@@ -1,6 +1,5 @@
 import { useState, useEffect, useCallback } from 'react';
 import { 
-  statesData, 
   State, 
   City, 
   Ward, 
@@ -8,7 +7,7 @@ import {
   getAQICategory,
   PollutantData 
 } from '@/data/pollutionData';
-
+import { allIndiaStates } from '@/data/indiaStatesData';
 // Simulated live data with realistic variations
 interface LiveAQIData {
   states: State[];
@@ -39,7 +38,7 @@ function applyPollutantVariation(pollutants: PollutantData): PollutantData {
 
 // Generate live data with variations
 function generateLiveData(): State[] {
-  return statesData.map(state => {
+  return allIndiaStates.map(state => {
     const updatedCities = state.cities.map(city => {
       const cityAqi = applyVariation(city.aqi, 20);
       const updatedWards = city.wards.map(ward => {
@@ -76,9 +75,9 @@ function generateLiveData(): State[] {
   });
 }
 
-export function useLiveAQI(refreshInterval: number = 7000) { // Default 7 seconds for hackathon demo
+export function useLiveAQI(refreshInterval: number = 7000) { // Default 7 seconds for live simulation
   const [data, setData] = useState<LiveAQIData>({
-    states: statesData,
+    states: allIndiaStates,
     lastUpdated: new Date(),
     isSimulated: true,
   });
