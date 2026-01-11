@@ -1,73 +1,91 @@
-# Welcome to your Lovable project
+Project Setup & Development Guide
+Project Overview
 
-## Project info
+This repository contains a modern web application built using a fast, scalable frontend stack.
+The codebase supports local development, version control, and easy deployment.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+How to Edit the Code
 
-## How can I edit this code?
+You can edit and maintain this project using any of the following approaches:
 
-There are several ways of editing your application.
+Option 1: Use Your Preferred IDE (Local Development)
+Prerequisites
 
-**Use Lovable**
+Node.js (recommended via nvm)
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+npm
 
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
+Setup Steps
+# Clone the repository
 git clone <YOUR_GIT_URL>
 
-# Step 2: Navigate to the project directory.
+# Navigate to the project directory
 cd <YOUR_PROJECT_NAME>
 
-# Step 3: Install the necessary dependencies.
-npm i
+# Install dependencies
+npm install
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Start the development server
 npm run dev
-```
 
-**Edit a file directly in GitHub**
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+This starts a local development server with hot reloading and instant preview.
 
-**Use GitHub Codespaces**
+Option 2: Edit Directly on GitHub
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+Open the repository on GitHub
 
-## What technologies are used for this project?
+Navigate to the file you want to edit
 
-This project is built with:
+Click the Edit (✏️) icon
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+Make changes and commit them
 
-## How can I deploy this project?
+Option 3: Use GitHub Codespaces
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+Open the repository main page
 
-## Can I connect a custom domain to my Lovable project?
+Click Code → Codespaces → New codespace
 
-Yes, you can!
+Edit files in the browser-based environment
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+Commit and push changes when done
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+Technology Stack
+
+This project uses:
+
+Vite – fast build and dev server
+
+TypeScript – type-safe development
+
+React – component-based UI
+
+shadcn/ui – modern UI components
+
+Tailwind CSS – utility-first styling
+
+Deployment
+
+The application can be built and deployed using standard Vite workflows.
+
+Typical steps:
+
+npm run build
+
+
+The generated production build can be hosted on any static hosting or server platform that supports modern JavaScript applications.
+
+Custom Domain Support
+
+If deployed on a platform that supports custom domains, DNS-based domain configuration can be used to attach a custom URL.
+
+Refer to your hosting provider’s documentation for domain setup steps.
+
+Notes
+
+No authentication, payments, or external paid services are required
+
+Designed to be lightweight, fast, and demo-ready
+
+Suitable for dashboards, public-facing tools, and decision-support systems
