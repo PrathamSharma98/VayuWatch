@@ -1,16 +1,6 @@
 import { motion } from 'framer-motion';
 import { Link, useLocation } from 'react-router-dom';
-import {
-  Wind,
-  Map,
-  BarChart3,
-  AlertCircle,
-  FileText,
-  Menu,
-  X,
-  User,
-  LogOut,
-} from 'lucide-react';
+import { Wind, Map, BarChart3, AlertCircle, FileText, Menu, X, User, LogOut } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { useState } from 'react';
 import { useAuth } from '@/contexts/AuthContext';
@@ -34,44 +24,39 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 bg-background/80 backdrop-blur-xl border-b border-border/50">
       <div className="container mx-auto px-4">
-        <div className="flex items-center gap-4 h-16">
-
-          {/* LEFT: Logo + Badge */}
-          <div className="flex items-center gap-3 shrink-0">
-            <Link to="/" className="flex items-center gap-2">
-              <motion.div
-                initial={{ rotate: -180, opacity: 0 }}
-                animate={{ rotate: 0, opacity: 1 }}
-                transition={{ duration: 0.5 }}
-                className="p-2 rounded-lg bg-gradient-to-br from-primary to-accent"
-              >
-                <Wind className="w-5 h-5 text-primary-foreground" />
-              </motion.div>
-              <div>
-                <h1 className="font-display font-bold text-lg text-foreground">
-                  VayuWatch
-                </h1>
-                <p className="text-[10px] text-muted-foreground -mt-1">
-                  India Air Quality Monitor
-                </p>
-              </div>
-            </Link>
-
-            <Badge
-              variant="outline"
-              className="hidden sm:flex items-center px-2 py-0.5 bg-warning/10 text-warning border-warning/30 text-xs"
+        <div className="flex items-center justify-between h-16">
+          {/* Logo */}
+          <Link to="/" className="flex items-center gap-2">
+            <motion.div
+              initial={{ rotate: -180, opacity: 0 }}
+              animate={{ rotate: 0, opacity: 1 }}
+              transition={{ duration: 0.5 }}
+              className="p-2 rounded-lg bg-gradient-to-br from-primary to-accent"
             >
-              🚀 Beta v1.0
-            </Badge>
-          </div>
+              <Wind className="w-5 h-5 text-primary-foreground" />
+            </motion.div>
+            <div>
+              <h1 className="font-display font-bold text-lg text-foreground">
+                VayuWatch
+              </h1>
+              <p className="text-[10px] text-muted-foreground -mt-1">
+                India Air Quality Monitor
+              </p>
+            </div>
+          </Link>
 
-          {/* CENTER: Search */}
-          <div className="hidden md:flex flex-1 justify-center max-w-md">
+          {/* Demo Badge */}
+          <Badge variant="outline" className="hidden sm:flex bg-warning/10 text-warning border-warning/30 text-xs">
+            🚀 Beta v1.0
+          </Badge>
+
+          {/* Global Search */}
+          <div className="hidden md:block flex-1 max-w-md mx-4">
             <GlobalSearch />
           </div>
 
-          {/* DESKTOP NAV */}
-          <nav className="hidden lg:flex items-center gap-2 ml-6">
+          {/* Desktop Navigation */}
+          <nav className="hidden lg:flex items-center gap-1">
             {navItems.map((item) => {
               const isActive = location.pathname === item.path;
               const Icon = item.icon;
@@ -94,10 +79,10 @@ export function Header() {
             })}
           </nav>
 
-          {/* RIGHT: Actions */}
-          <div className="flex items-center gap-3 ml-auto">
+          {/* Right Section */}
+          <div className="flex items-center gap-2">
             <NotificationCenter />
-
+            
             {isAuthenticated ? (
               <div className="hidden md:flex items-center gap-2">
                 <span className="text-sm text-muted-foreground">
@@ -118,19 +103,15 @@ export function Header() {
 
             {/* Mobile Menu Button */}
             <button
-              className="md:hidden flex items-center justify-center p-2 text-muted-foreground hover:text-foreground"
+              className="md:hidden p-2 text-muted-foreground hover:text-foreground"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             >
-              {mobileMenuOpen ? (
-                <X className="w-6 h-6" />
-              ) : (
-                <Menu className="w-6 h-6" />
-              )}
+              {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
           </div>
         </div>
 
-        {/* MOBILE NAV */}
+        {/* Mobile Navigation */}
         {mobileMenuOpen && (
           <motion.nav
             initial={{ opacity: 0, y: -10 }}
@@ -158,7 +139,6 @@ export function Header() {
                 </Link>
               );
             })}
-
             {!isAuthenticated && (
               <Link
                 to="/login"
