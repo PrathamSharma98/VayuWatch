@@ -2,7 +2,7 @@
 
 ## Live Website
 
-https://USERNAME.github.io/REPO_NAME/
+https://github.com/PrathamSharma98/VayuWatch/
 
 ---
 
